@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>TravelTrax - Index</title>
+    <title>TravelTrax - Detail</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
   
@@ -50,7 +50,7 @@
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="{{ url("#hero") }}">Home</a></li>
+            <li><a class="nav-link scrollto active" href="{{ route("home") }}">Home</a></li>
             <li><a class="nav-link scrollto" href="{{ url("#services") }}">Populer</a></li>
             <li><a class="nav-link scrollto" href="{{ url("#portfolio") }}">Gallery</a></li>
             {{-- <li><a class="nav-link scrollto" href="{{ url("#") }}">Promo</a></li> --}}

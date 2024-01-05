@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 })->name('home');
-Route::get('/detail', function (){
-    return view('detail');
+Route::get('/detail-packed', function (){
+    return view('detail-packed');
 })->name('detail');
+Route::get('/gallery', function (){
+    return view('gallery');
+})->name('gallery');
 
 Route::get('/dashboard', function () {
     return view('Backend.index');
