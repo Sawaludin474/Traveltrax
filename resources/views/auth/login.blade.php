@@ -50,7 +50,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="{{ url("index.html") }}" class="logo d-flex align-items-center w-auto">
-                  <img src="{{ asset("/squadfree/assets/img/logo1.png") }}" alt="" >
+                  <img src="{{ asset("/squadfree/assets/img/logo1.png") }}" width="50" alt="" >
                   <span class="d-none d-lg-block">TravelTrax</span>
                 </a>
               </div><!-- End Logo -->
@@ -78,7 +78,7 @@
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
+                      <div class="invalid-feedback">Please enter your password!</div> 
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Login</button>

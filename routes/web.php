@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 })->name('home');
-Route::get('/detail-packed', function (){
-    return view('detail-packed');
-})->name('detail');
+Route::get('/package', function (){
+    return view('package');
+})->name('package');
 Route::get('/gallery', function (){
     return view('gallery');
 })->name('gallery');
@@ -27,6 +28,13 @@ Route::get('/gallery', function (){
 Route::get('/dashboard', function () {
     return view('Backend.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/users', function (){
+    return view('backend.users.index');
+})->name('users');
+
+Route::resource('users', UserController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

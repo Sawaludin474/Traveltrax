@@ -1,5 +1,18 @@
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 /*=============== CHANGE BACKGROUND HEADER ===============*/
+    // JavaScript for adding active class on click
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  
+
+
+
 const scrollHeader = () => {
     const header = document.getElementById("header");
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag

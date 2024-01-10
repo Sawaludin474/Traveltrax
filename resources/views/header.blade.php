@@ -1,44 +1,30 @@
 <header class="header" id="header">
-    <nav class="nav container">
-        <a href="{{ route('home') }}" class="nav__logo"><i class='bx bx-paper-plane' ></i>TravelTrax</a>
-        <div class="nav__menu">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="{{ route('home') }}" class="nav__link">
-                        <i class="bx bx-home-alt"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ route('detail') }}" class="nav__link">
-                        <i class="bx bx-building-house"></i>
-                        <span>Package Travel</span>
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ url('blog.html') }}" class="nav__link">
-                        <i class="bx bx-award"></i>
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ url('blog.html') }}" class="nav__link">
-                        <i class="bx bx-award"></i>
-                        <span>gallery</span>
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ url('contact.html') }}" class="nav__link">
-                        <i class="bx bx-phone"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- theme -->
-        <i class="bx bx-moon change-theme" id="theme-button"></i>
-
-        <a href="{{ route('login') }}" class="button nav__button">Log In</a>
-    </nav>
+        <nav class="bg-slate-500 p-4">
+            <div class="container mx-auto flex items-center justify-between">
+              <!-- Brand/Logo -->
+              <a href="#" class="text-white text-lg font-semibold"><img src="{{asset('/squadfree/assets/img/logo.png')}}" width="150" alt=""></a>
+              <!-- Navigation Links -->
+              <div class="space-x-4">
+                <a href="{{ route('home')}}" class="text-white hover:text-gray-300 nav-link" id="home">Home</a>
+                <a href="{{ route('package')}}" class="text-white hover:text-gray-300" id="popular">Paket Travel</a>
+                <a href="{{ route('gallery')}}" class="text-white hover:text-gray-300" id="gallery">Gallery</a>
+        
+                <!-- Dropdown Menu -->
+                <div class="group relative inline-block text-white">
+                    
+                    @if (Auth::check())
+                    <!-- Jika sudah login, tampilkan nama pengguna -->
+                        <a href="{{ route('dashboard')}}" class="text-white focus:outline-none">{{ Auth::user()->name }}</a>
+                    @else
+                    <!-- Jika belum login, tampilkan button login -->
+                        <button class="hover:text-gray-300 focus:outline-none" id="loginButton">Login</button>
+                        <ul class="absolute hidden bg-slate-200 text-gray-700 pt-2 group-hover:block rounded-md" id="loginDropdown">
+                            <li><a href="{{ route('login')}}" class="block px-4 py-2 hover:bg-gray-300" id="login">Login</a></li>
+                            <li><a href="{{ route('register')}}" class="block px-4 py-2 hover:bg-gray-300" id="register">Register</a></li>
+                        </ul>
+                    @endif
+                </div>
+              </div>
+            </div>
+          </nav>
 </header>

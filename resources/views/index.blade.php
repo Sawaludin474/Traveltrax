@@ -22,7 +22,7 @@
                                     beauty of the world.
                                 </p>
                                 <br>
-                                <a href="{{ url('#button') }}" class="button nav__button">Booking Now</a>
+                                <a href="{{ url('#button') }}" class=" button nav__button transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Booking Now</a>
                             </div>
                         </div>
                     </div>
@@ -30,6 +30,8 @@
             </div>
         </div>
     </section>
+
+    
     <!--==================== LOGOS ====================-->
     <section class="logos" style="margin-top: 9rem; padding-bottom: 3rem">
         <div class="logos__container container grid">
