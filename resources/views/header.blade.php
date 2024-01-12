@@ -12,9 +12,11 @@
                 <!-- Dropdown Menu -->
                 <div class="group relative inline-block text-white">
                     
-                    @if (Auth::check())
+                    @if (Auth::guard('web')->check())
                     <!-- Jika sudah login, tampilkan nama pengguna -->
-                        <a href="{{ route('dashboard')}}" class="text-white focus:outline-none">{{ Auth::user()->name }}</a>
+                        <a href="{{ route('dashboard')}}" class="text-white focus:outline-none">{{ Auth::user()->username }}</a>
+                        @elseif (Auth::guard('admin')->check())
+                        <a href="{{ route('admin.dashboard')}}" class="text-white focus:outline-none">{{ Auth::guard('admin')->user()->name }}</a>
                     @else
                     <!-- Jika belum login, tampilkan button login -->
                         <button class="hover:text-gray-300 focus:outline-none" id="loginButton">Login</button>

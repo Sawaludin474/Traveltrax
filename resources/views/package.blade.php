@@ -13,7 +13,7 @@
 
     <div class="popular__all">
       <article class="popular__card">
-        <a href="{{ url("") }}">
+        <a href="{{ route("detail") }}">
           <img
             src="{{ asset("/frontend/./assets/img/travel-1.jpg") }}"
             alt=""

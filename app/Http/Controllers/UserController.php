@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
+
+
     public function index()
     {
         $users = User::Orderby('name','asc')->paginate(9);

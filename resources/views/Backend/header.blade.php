@@ -30,15 +30,19 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ url("#") }}" data-bs-toggle="dropdown">
             <img src="{{ asset("/backend/assets/img/profile-img.jpg") }}" class="rounded-circle">
-            @if (Auth::check())
-            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->username}}</span>
-            @endif
+            @if (Auth::guard('web')->check())
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->username }}</span>
+            @elseif (Auth::guard('admin')->check())
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::guard('admin')->user()->name }}</span>
+           @endif
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-                @if (Auth::check())
+                @if (Auth::guard('web')->check())
                 <h6>{{ Auth::user()->name }}</h6>
+                @elseif (Auth::guard('admin')->check())
+                <h6>{{ Auth::guard('admin')->user()->name }}</h6>
                 @endif
               <span>Web Designer</span>
             </li>
@@ -51,8 +55,10 @@
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="{{ url("users-profile.html") }}">
-                <i class="bi bi-gear"></i>@if (Auth::check())
+                <i class="bi bi-gear"></i>@if (Auth::guard('web')->check())
                 <span>{{ Auth::user()->email }}</span>
+                @elseif (Auth::guard('admin')->check())
+                <span>{{ Auth::guard('admin')->user()->email }}</span>
                 @endif
               </a>
             </li>
@@ -60,7 +66,7 @@
               <hr class="dropdown-divider">
             </li>
             
-            <form action="{{ route('logout')}}" method="post">
+            <form action="{{ Auth::guard('admin')->check() ? route('admin.logout') : route('logout') }}" method="post">
                 @csrf
                 <button class="dropdown-item d-flex align-items-center" type="submit">
                     <i class="bi bi-box-arrow-right"></i>
