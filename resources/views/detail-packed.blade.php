@@ -8,7 +8,7 @@
           <div class="swiper-wrapper">
             <!--========== ISLANDS 1 ==========-->
             <section class="islands swiper-slide">
-              <img src="{{ asset("/frontend/./assets/img/borabora.jpg") }}" alt="" class="islands__bg" />
+              <img src="{{ asset("/frontend/assets/img/borabora.jpg") }}" alt="" class="islands__bg" />
 
               <div class="islands__container container">
                 <div class="islands__data">
@@ -20,7 +20,7 @@
 
             <!--========== ISLANDS 2 ==========-->
             <section class="islands swiper-slide">
-              <img src="{{ asset("/frontend/./assets/img/bali.jpg") }}" alt="" class="islands__bg" />
+              <img src="{{ asset("/frontend/assets/img/bali.jpg") }}" alt="" class="islands__bg" />
 
               <div class="islands__container container">
                 <div class="islands__data">
@@ -48,17 +48,17 @@
         <div class="controls gallery-thumbs">
           <div class="controls__container swiper-wrapper">
             <img
-              src="{{ asset("/frontend/./assets/img/borabora.jpg") }}"
+              src="{{ asset("/frontend/assets/img/borabora.jpg") }}"
               alt=""
               class="controls__img swiper-slide"
             />
             <img
-              src="{{ asset("/frontend/./assets/img/bali.jpg") }}"
+              src="{{ asset("/frontend/assets/img/bali.jpg") }}"
               alt=""
               class="controls__img swiper-slide"
             />
             <img
-              src="{{ asset("/frontend/./assets/img/palawan.jpg") }}"
+              src="{{ asset("/frontend/assets/img/palawan.jpg") }}"
               alt=""
               class="controls__img swiper-slide"
             />
@@ -211,7 +211,7 @@
             <article class="popular__card">
               <a href="{{ url("") }}">
                 <img
-                  src="{{ asset("/frontend/./assets/img/travel-1.jpg") }}"
+                  src="{{ asset("/frontend/assets/img/travel-1.jpg") }}"
                   alt=""
                   class="popular__img"
                 />
@@ -225,7 +225,7 @@
             <article class="popular__card">
               <a href="{{ url("#") }}">
                 <img
-                  src="{{ asset("/frontend/./assets/img/travel-2.jpg") }}"
+                  src="{{ asset("/frontend/assets/img/travel-2.jpg") }}"
                   alt=""
                   class="popular__img"
                 />
@@ -239,7 +239,7 @@
             <article class="popular__card">
               <a href="{{ url("#") }}">
                 <img
-                  src="{{ asset("/frontend/./assets/img/travel-3.jpg") }}"
+                  src="{{ asset("/frontend/assets/img/travel-3.jpg") }}"
                   alt=""
                   class="popular__img"
                 />
@@ -253,7 +253,7 @@
             <article class="popular__card">
               <a href="{{ url("#") }}">
                 <img
-                  src="{{ asset("/frontend/./assets/img/travel-4.jpg") }}"
+                  src="{{ asset("/frontend/assets/img/travel-4.jpg") }}"
                   alt=""
                   class="popular__img"
                 />
@@ -267,7 +267,7 @@
             <article class="popular__card">
               <a href="{{ url("#") }}">
                 <img
-                  src="{{ asset("/frontend/./assets/img/travel-3.jpg") }}"
+                  src="{{ asset("/frontend/assets/img/travel-3.jpg") }}"
                   alt=""
                   class="popular__img"
                 />

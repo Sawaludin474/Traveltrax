@@ -1,12 +1,13 @@
-<footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>TravelTrax</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="#">TravelTrax</a>
-    </div>
-  </footer>
+<footer class="main-footer">
+  <div class="pull-right d-none d-sm-inline-block">
+      <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+          <li class="nav-item">
+              <a class="nav-link" href="{{ url('javascript:void(0)') }}">FAQ</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ url('#') }}">Purchase Now</a>
+          </li>
+      </ul>
+  </div>
+  &copy; 2020 <a href="{{ url('#') }}">Psd to Html Expert</a>. All Rights Reserved.
+</footer>

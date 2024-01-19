@@ -5,39 +5,48 @@
       <h5 class="card-title">Multi Columns Form</h5>
 
       <!-- Multi Columns Form -->
-      <form class="row g-3">
-        <div class="col-md-12">
-          <label for="inputName5" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="inputName5">
+      <form class="row g-3" action="{{ route('users.store')}}" method="post">
+        @csrf
+        <div class="col-md-6">
+          <label for="inputName5" class="form-label">Full Name</label>
+          <input type="text" name="name" class="form-control" id="inputName5">
         </div>
         <div class="col-md-6">
+          <label for="inputName5" class="form-label">User Name</label>
+          <input type="text" name="username" class="form-control" id="inputName5">
+        </div>
+        <div class="col-md-12">
           <label for="inputEmail5" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail5">
+          <input type="email" name="email" class="form-control" id="inputEmail5">
         </div>
         <div class="col-md-6">
           <label for="inputPassword5" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword5">
-        </div>
-        <div class="col-12">
-          <label for="inputAddress5" class="form-label">Address</label>
-          <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">
-        </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <input type="password" name="password" class="form-control" id="inputPassword5">
         </div>
         <div class="col-md-6">
+          <label for="inputPassword5" class="form-label">Password</label>
+          <input type="password" name="password_confirmation" class="form-control" id="inputPassword5">
+        </div>
+        {{-- <div class="col-12">
+          <label for="inputAddress5" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">
+        </div> --}}
+        {{-- <div class="col-12">
+          <label for="inputAddress2" class="form-label">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div> --}}
+        {{-- <div class="col-md-6">
           <label for="inputCity" class="form-label">City</label>
           <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
+        </div> --}}
+        {{-- <div class="col-md-4">
           <label for="inputState" class="form-label">State</label>
           <select id="inputState" class="form-select">
             <option selected>Choose...</option>
             <option>...</option>
           </select>
-        </div>
-        <div class="col-md-2">
+        </div> --}}
+        {{-- <div class="col-md-2">
           <label for="inputZip" class="form-label">Zip</label>
           <input type="text" class="form-control" id="inputZip">
         </div>
@@ -48,7 +57,7 @@
               Check me out
             </label>
           </div>
-        </div>
+        </div> --}}
         <div class="text-center">
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="reset" class="btn btn-secondary">Reset</button>

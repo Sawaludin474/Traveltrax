@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\TravelPackageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,16 +31,15 @@ Route::get('/gallery', function (){
     return view('gallery');
 })->name('gallery');
 
-Route::get('/dashboard', function () {
-    return view('Backend.index');
+Route::get('/dashboard', 'UserController@index', function () {
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-Route::get('/users', function (){
-    return view('backend.users.index');
-})->name('users');
-
 Route::resource('users', UserController::class);
+
+Route::resource('travelpackages', TravelPackageController::class);
+
+Route::resource('transactions',TransactionsController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

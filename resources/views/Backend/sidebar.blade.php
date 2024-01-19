@@ -1,78 +1,69 @@
-<aside id="sidebar" class="sidebar">
-  
-  <ul class="sidebar-nav" id="sidebar-nav">
-    
-    <li class="nav-item">
-      <a class="nav-link " href="{{ route('dashboard') }}">
-        <i class="bi bi-grid"></i>
-        <span>Dashboard</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
-    
-        
-    <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="{{ url("#") }}">
-              <i class="bi bi-layout-text-window-reverse"></i><span>Menu Master</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="tables-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-              <li>
-                  <a href="{{ route("users.index") }}">
-                      <i class="bi bi-users"></i><span>Users</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="{{ url("tables-data.html") }}">
-                      <i class="bi bi-circle"></i><span>Data Tables</span>
-                  </a>
-              </li>
-          </ul>
-  </li><!-- End Tables Nav -->
+<aside class="main-sidebar">
+    <!-- sidebar-->
+    <section class="sidebar">
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="{{ url("#") }}">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ url("forms-elements.html") }}">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url("forms-layouts.html") }}">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url("forms-editors.html") }}">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url("forms-validation.html") }}">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
+        <div class="user-profile">
+            <div class="ulogo">
+                <a href="{{ route('home') }}">
+                    <!-- logo for regular state and mobile devices -->
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('/squadfree/assets/img/logo1.png') }}" width="50" alt="">
+                        <h3><b>TravelTrax</b> @admin Admin @endadmin</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- sidebar menu-->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <li>
+                <a href="{{ route('dashboard') }}">
+                    <i data-feather="pie-chart"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="header nav-small-cap">Admin</li>
+            @admin
+            <li class="treeview">
+                <a href="{{ url('#') }}">
+                    <i data-feather="grid"></i>
+                    <span>Menu Master</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('travelpackages.index') }}"><i class="ti-car"> Paket Travel</i></a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="{{ url('#') }}">
+                    <i data-feather="grid"></i>
+                    <span>Reports</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="ti-car"> Users</i></a></li>
+                    {{-- <li><a href="{{ route('reportspackages') }}"><i class="ti-car"> Paket Travel</i></a></li> --}}
+                </ul>
+            </li>
+            @endadmin
         </ul>
-      </li><!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="{{ url("#") }}">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ url("tables-general.html") }}">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url("tables-data.html") }}">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
+    </section>
 
-    </ul>
-
+    <div class="sidebar-footer">
+        <!-- item-->
+        <a href="{{ url('javascript:void(0)') }}" class="link" data-toggle="tooltip" title=""
+            data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
+        <!-- item-->
+        <a href="{{ url('mailbox_inbox.html') }}" class="link" data-toggle="tooltip" title=""
+            data-original-title="Email"><i class="ti-email"></i></a>
+        <!-- item-->
+        <a href="{{ url('javascript:void(0)') }}" class="link" data-toggle="tooltip" title=""
+            data-original-title="Logout"><i class="ti-lock"></i></a>
+    </div>
+</aside>
   </aside>

@@ -1,83 +1,66 @@
-<header id="header" class="header fixed-top d-flex align-items-center">
+  <header class="main-header">
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top pl-30">
+        <!-- Sidebar toggle button-->
+        <div>
+            <ul class="nav">
+                <li class="btn-group nav-item">
+                    <a href="{{ url('#') }}" class="waves-effect waves-light nav-link rounded svg-bt-icon"
+                        data-toggle="push-menu" role="button">
+                        <i class="nav-link-icon mdi mdi-menu"></i>
+                    </a>
+                </li>
+                <li class="btn-group nav-item">
+                    <a href="{{ url('#') }}" data-provide="fullscreen"
+                        class="waves-effect waves-light nav-link rounded svg-bt-icon" title="Full Screen">
+                        <i class="nav-link-icon mdi mdi-crop-free"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="{{ route("home") }}" class="logo d-flex align-items-center">
-        <img src="{{ asset("/squadfree/assets/img/logo1.png") }}" alt="">
-        <span class="d-none d-lg-block">TravelTrax</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+        <div class="navbar-custom-menu r-side">
+            <ul class="nav navbar-nav">
+                <!-- full Screen -->
+                <!-- User Account-->
+                <li class="dropdown user user-menu">
+                    <a href="{{ url('#') }}" class="waves-effect waves-light rounded dropdown-toggle p-0"
+                        data-toggle="dropdown" title="User">
+                        @if (Auth::guard('web')->check())
+                        <img src="{{ asset('/backend/images/avatar/avatar-15.png') }}" alt="">
+                        @elseif (Auth::guard('admin')->check())
+                        <img src="{{ asset('/backend/images/avatar/avatar-13.png') }}" alt="">
+                        @endif
+                    </a>
+                    
+                    <ul class="dropdown-menu animated flipInX">
+                        <li class="user-body">
+                          @if (Auth::guard('web')->check())
+                            <a class="dropdown-item" href="{{ url('#') }}"><i
+                                    class="ti-user text-muted mr-2"></i>{{ auth()->user()->name}}</a>
+                            <a class="dropdown-item" href="{{ url('#') }}"><i
+                                    class="ti-email text-muted mr-2"></i> {{ auth()->user()->email}}</a>
+                            @elseif (Auth::guard('admin')->check())
+                            <a class="dropdown-item" href="{{ url('#') }}"><i
+                              class="ti-user text-muted mr-2"></i>{{ auth()->guard('admin')->user()->name}}</a>
+                              <a class="dropdown-item" href="{{ url('#') }}"><i
+                              class="ti-email text-muted mr-2"></i> {{ auth()->guard('admin')->user()->email}}</a>
+                            @endif
+                            <div class="dropdown-divider">
+                            </div>
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+                            <form action="{{ Auth::guard('admin')->check() ? route('admin.logout') : route('logout') }}" method="post">
+                              @csrf
+                              <button class="dropdown-item" type="submit">
+                                  <i class="ti-shift-left text-muted mr-2"></i>
+                                  <span>Sign Out</span>
+                              </button>
+                          </form>
+                        </li>
+                    </ul>
+                </li>
 
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="{{ url("#") }}">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
-
-
-
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ url("#") }}" data-bs-toggle="dropdown">
-            <img src="{{ asset("/backend/assets/img/profile-img.jpg") }}" class="rounded-circle">
-            @if (Auth::guard('web')->check())
-            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->username }}</span>
-            @elseif (Auth::guard('admin')->check())
-            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::guard('admin')->user()->name }}</span>
-           @endif
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-                @if (Auth::guard('web')->check())
-                <h6>{{ Auth::user()->name }}</h6>
-                @elseif (Auth::guard('admin')->check())
-                <h6>{{ Auth::guard('admin')->user()->name }}</h6>
-                @endif
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="{{ url("users-profile.html") }}">
-                <i class="bi bi-gear"></i>@if (Auth::guard('web')->check())
-                <span>{{ Auth::user()->email }}</span>
-                @elseif (Auth::guard('admin')->check())
-                <span>{{ Auth::guard('admin')->user()->email }}</span>
-                @endif
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            
-            <form action="{{ Auth::guard('admin')->check() ? route('admin.logout') : route('logout') }}" method="post">
-                @csrf
-                <button class="dropdown-item d-flex align-items-center" type="submit">
-                    <i class="bi bi-box-arrow-right"></i>
-                    <span>Sign Out</span>
-                </button>
-            </form>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header>
+            </ul>
+        </div>
+    </nav>
+</header>

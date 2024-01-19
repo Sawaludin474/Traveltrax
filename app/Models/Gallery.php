@@ -10,8 +10,13 @@ class Gallery extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        'travel_package_id',
+        'image',
+    ];
+
     public function travelpackage(): BelongsTo
     {
-        return $this->belongsTo(TravelPackage::class);
+        return $this->belongsTo(TravelPackage::class, 'travel_package_id');
     }
 }

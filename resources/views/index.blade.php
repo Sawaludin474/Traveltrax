@@ -22,7 +22,7 @@
                                     beauty of the world.
                                 </p>
                                 <br>
-                                <a href="{{ url('#button') }}" class=" button nav__button transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Booking Now</a>
+                                <a href="{{ route('package') }}" class=" button nav__button transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Booking Now</a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,6 @@
                         </a>
                     </article>
                 </div>
-
                 <div class="swiper-button-next">
                     <i class="bx bx-chevron-right"></i>
                 </div>
@@ -232,6 +231,74 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section >
+
+            <div class="container mx-auto p-8 mt-36" >
+                <span class="section__subtitle" style="text-align: center">Best Choice</span>
+                <h2 class="section__title" style="text-align: center">
+                    Data Statistic
+                </h2>
+            
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Customers -->
+                    <div class="bg-white p-6 rounded-md shadow-md">
+                        <i class="fas fa-users text-4xl text-blue-500"></i>
+                        <h3 class="text-2xl font-semibold mb-4">Customers</h3>
+                        <div class="flex items-center">
+                            <span class="text-4xl font-bold text-blue-500">100</span>
+                            <span class="ml-2 text-gray-600">Total Customers</span>
+                        </div>
+                        <!-- Placeholder Bar Chart -->
+                        <div class="mt-4 bg-gray-100 p-4 rounded-md">
+                            <div class="bg-blue-500 h-8 w-3/4 rounded-md"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Countries -->
+                    <div class="bg-white p-6 rounded-md shadow-md">
+                        <i class="fas fa-globe text-4xl text-green-500"></i>
+                        <h3 class="text-2xl font-semibold mb-4">Countries</h3>
+                        <div class="flex items-center">
+                            <span class="text-4xl font-bold text-green-500">50</span>
+                            <span class="ml-2 text-gray-600">Total Countries</span>
+                        </div>
+                        <!-- Placeholder Bar Chart -->
+                        <div class="mt-4 bg-gray-100 p-4 rounded-md">
+                            <div class="bg-green-500 h-8 w-1/2 rounded-md"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Hotels -->
+                    <div class="bg-white p-6 rounded-md shadow-md">
+                        <i class="fas fa-hotel text-4xl text-yellow-500"></i>
+                        <h3 class="text-2xl font-semibold mb-4">Hotels</h3>
+                        <div class="flex items-center">
+                            <span class="text-4xl font-bold text-yellow-500">200</span>
+                            <span class="ml-2 text-gray-600">Total Hotels</span>
+                        </div>
+                        <!-- Placeholder Bar Chart -->
+                        <div class="mt-4 bg-gray-100 p-4 rounded-md">
+                            <div class="bg-yellow-500 h-8 w-3/4 rounded-md"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Agents -->
+                    <div class="bg-white p-6 rounded-md shadow-md">
+                        <i class="fas fa-user-tie text-4xl text-red-500"></i>
+                        <h3 class="text-2xl font-semibold mb-4">Agents</h3>
+                        <div class="flex items-center">
+                            <span class="text-4xl font-bold text-red-500">75</span>
+                            <span class="ml-2 text-gray-600">Total Agents</span>
+                        </div>
+                        <!-- Placeholder Bar Chart -->
+                        <div class="mt-4 bg-gray-100 p-4 rounded-md">
+                            <div class="bg-red-500 h-8 w-1/3 rounded-md"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
 
     <!-- blog -->

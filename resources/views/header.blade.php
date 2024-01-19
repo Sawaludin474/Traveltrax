@@ -7,11 +7,10 @@
               <div class="space-x-4">
                 <a href="{{ route('home')}}" class="text-white hover:text-gray-300 nav-link" id="home">Home</a>
                 <a href="{{ route('package')}}" class="text-white hover:text-gray-300" id="popular">Paket Travel</a>
-                <a href="{{ route('gallery')}}" class="text-white hover:text-gray-300" id="gallery">Gallery</a>
+                <a href="{{ route('package')}}" class="text-white hover:text-gray-300" id="popular">Services</a>
         
                 <!-- Dropdown Menu -->
                 <div class="group relative inline-block text-white">
-                    
                     @if (Auth::guard('web')->check())
                     <!-- Jika sudah login, tampilkan nama pengguna -->
                         <a href="{{ route('dashboard')}}" class="text-white focus:outline-none">{{ Auth::user()->username }}</a>

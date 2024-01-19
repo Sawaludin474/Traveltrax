@@ -10,9 +10,14 @@ class TravelPackage extends Model
 {
     use HasFactory;
 
-    public function galery(): HasMany
+    protected $fillable = [
+        'title', 'location', 'about', 'departure_date', 'duration', 'type', 'price',
+    ];
+
+
+    public function gallery(): HasMany
     {
-        return $this->hasMany(Gallery::class);
+        return $this->hasMany(Gallery::class, 'travel_package_id');
     }
 
     public function transaction(): HasMany

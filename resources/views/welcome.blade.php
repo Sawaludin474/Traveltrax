@@ -10,12 +10,10 @@
     <link href="{{ asset("/squadfree/assets/img/logo1.png") }}" rel="icon">
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="{{ asset('/frontend/./assets/libraries/swiper-bundle.min.css') }}" />
-
+    <link rel="stylesheet" href="{{ asset('/frontend/assets/libraries/swiper-bundle.min.css') }}" />
     @vite('resources/css/app.css')
-    
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="{{ asset('/frontend/./assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/frontend/assets/css/style.css') }}" />
 
     <title>TravelTrax</title>
     
@@ -42,13 +40,14 @@
     @stack('script')
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src="{{ asset('/frontend/./assets/libraries/scrollreveal.min.js') }}"></script>
+    <script src="{{ asset('/frontend/assets/libraries/scrollreveal.min.js') }}"></script>
 
     <!--=============== SWIPER JS ===============-->
-    <script src="{{ asset('/frontend/./assets/libraries/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('/frontend/assets/libraries/swiper-bundle.min.js') }}"></script>
 
     <!--=============== MAIN JS ===============-->
-    <script src="{{ asset('/frontend/./assets/js/main.js') }}"></script>
+    <script src="{{ asset('/frontend/assets/js/main.js') }}"></script>
+    
 
 
 

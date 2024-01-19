@@ -14,16 +14,12 @@ return new class extends Migration
         Schema::create('travel_packages', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug');
             $table->string('location');
             $table->longText('about');
-            $table->string('featured_event');
-            $table->string('language');
             $table->date('departure_date');
             $table->string('duration');
             $table->string('type');
-            $table->integer('price');
-            $table->timestamp('deleted_at');
+            $table->bigInteger('price');
             $table->timestamps();
         });
     }

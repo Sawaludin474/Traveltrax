@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('transaction_id')->constrained('transactions')->cascadeOnDelete();
             $table->string('username');
+            $table->integer('phone_number');
             $table->string('nationally');
-            $table->tinyInteger('is_visa');
+            $table->tinyInteger('visa');
             $table->date('doe_passport');
-            $table->timestamp('deleted_at');
             $table->timestamps();
         });
     }

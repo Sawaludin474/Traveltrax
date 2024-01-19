@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('travel_package_id')->constrained('travel_packages')->cascadeOnDelete();
             $table->text('image');
-            $table->timestamp('deleted_at');
             $table->timestamps();
         });
     }
