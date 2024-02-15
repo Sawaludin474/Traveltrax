@@ -65,9 +65,9 @@
             <div class="box-body container">
                 <h3>Images</h3>
                 <div id="gallery-content">
-                    @foreach ($travelPackages->gallery as $item)
-                        <img src="{{ asset('storage/' . $item->image) }}" width="150" alt="image">
-                    @endforeach
+                        @foreach ($travelPackages->gallery as $item)
+                            <img src="{{ asset('storage/' . $item->image) }}" width="150" alt="image">
+                        @endforeach
                 </div>
             </div>
         <!-- End Default Table Example -->

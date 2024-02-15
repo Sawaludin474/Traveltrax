@@ -15,7 +15,7 @@ class TravelPackageController extends Controller
     $totalTravelPackages = TravelPackage::count();
     $travelPackages = TravelPackage::orderBy('title', 'asc')->paginate(9);
 
-    return view('backend.index', compact('travelPackages', 'totalTravelPackages'));
+    return view('backend.packages.index', compact('travelPackages', 'totalTravelPackages'));
     }
 
     /**

@@ -12,76 +12,24 @@
     </h2>
 
     <div class="popular__all">
+      @foreach ($travelPackages as $item)
       <article class="popular__card">
-        <a href="{{ route("detail") }}">
-          <img
-            src="{{ asset("/frontend/./assets/img/travel-1.jpg") }}"
+        <a href="{{ route('detail', $item->id)}}">
+          @if($item->gallery->isNotEmpty()) 
+            <img
+            src="{{ asset('storage/' . $item->gallery->first()->image) }}"
             alt=""
             class="popular__img"
-          />
+            />
+      @endif
           <div class="popular__data">
-            <h2 class="popular__price"><span>$</span>500,00</h2>
-            <h3 class="popular__title">Bali, Indonesia</h3>
-            <p class="popular__description">3D4N</p>
+            <h2 class="popular__price"><span>Rp. {{ number_format($item->price, 0, ',', '.') }},00</span></h2>
+            <h3 class="popular__title">{{$item->location}}</h3>
+            <p class="popular__description"></p>
           </div>
         </a>
       </article>
-      <article class="popular__card">
-        <a href="{{ url("#") }}">
-          <img
-            src="{{ asset("/frontend/./assets/img/travel-2.jpg") }}"
-            alt=""
-            class="popular__img"
-          />
-          <div class="popular__data">
-            <h2 class="popular__price"><span>$</span>35,159</h2>
-            <h3 class="popular__title">Dubai, Uni Emirat Arab</h3>
-            <p class="popular__description">4D5N</p>
-          </div>
-        </a>
-      </article>
-      <article class="popular__card">
-        <a href="{{ url("#") }}">
-          <img
-            src="{{ asset("/frontend/./assets/img/travel-3.jpg") }}"
-            alt=""
-            class="popular__img"
-          />
-          <div class="popular__data">
-            <h2 class="popular__price"><span>$</span>75,043</h2>
-            <h3 class="popular__title">Rome, Italia</h3>
-            <p class="popular__description">5D6N</p>
-          </div>
-        </a>
-      </article>
-      <article class="popular__card">
-        <a href="{{ url("#") }}">
-          <img
-            src="{{ asset("/frontend/./assets/img/travel-4.jpg") }}"
-            alt=""
-            class="popular__img"
-          />
-          <div class="popular__data">
-            <h2 class="popular__price"><span>$</span>62,024</h2>
-            <h3 class="popular__title">Lombok, Indonesia</h3>
-            <p class="popular__description">2D3N</p>
-          </div>
-        </a>
-      </article>
-      <article class="popular__card">
-        <a href="{{ url("#") }}">
-          <img
-            src="{{ asset("/frontend/./assets/img/travel-3.jpg") }}"
-            alt=""
-            class="popular__img"
-          />
-          <div class="popular__data">
-            <h2 class="popular__price"><span>$</span>75,043</h2>
-            <h3 class="popular__title">Bankok, Thailand</h3>
-            <p class="popular__description">5D6N</p>
-          </div>
-        </a>
-      </article>
+      @endforeach
     </div>
   </div>
 </section>

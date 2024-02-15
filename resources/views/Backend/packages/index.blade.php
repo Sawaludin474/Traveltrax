@@ -6,8 +6,8 @@
 @section('content')
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Hover Export Data Table</h3>
-            <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+            <h3 class="box-title">Data Packages</h3>
+            <a href="{{ route('travelpackages.create')}}" class="btn btn-success"><i class="fa fa-plus"> Add data</i></a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -58,16 +58,3 @@
     </div>
     <!-- /.box -->
 @endsection
-
-@push('scripts')
-<script>
-        $(document).ready(function () {
-        var table = $('#datatable').DataTable({
-            dom: 'Bfltp',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
-        });
-    });
-</script>
-@endpush

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TravelPackage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -22,10 +23,13 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 Route::get('/package', function (){
-    return view('package');
+    $travelPackages = TravelPackage::orderBy('title', 'asc')->paginate(9);
+
+    return view('package',compact('travelPackages'));
 })->name('package');
-Route::get('/detail', function (){
-    return view('detail-packed');
+Route::get('/detail/{id}', function ($id){
+    $travelPackage = TravelPackage::with('gallery')->findOrFail($id);
+    return view('detail-packed', compact('travelPackage'));
 })->name('detail');
 Route::get('/gallery', function (){
     return view('gallery');
