@@ -35,6 +35,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('travelpackages.index') }}"><i class="ti-car"> Paket Travel</i></a></li>
+                    <li><a href="{{ route('transactions.index') }}"><i class="ti-file"> Transaksi</i></a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -62,8 +63,10 @@
         <a href="{{ url('mailbox_inbox.html') }}" class="link" data-toggle="tooltip" title=""
             data-original-title="Email"><i class="ti-email"></i></a>
         <!-- item-->
-        <a href="{{ url('javascript:void(0)') }}" class="link" data-toggle="tooltip" title=""
-            data-original-title="Logout"><i class="ti-lock"></i></a>
+        <form method="POST" class="link" data-toggle="tooltip" action="{{ route('admin.logout') }}">
+            @csrf
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
     </div>
 </aside>
   </aside>

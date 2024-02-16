@@ -34,7 +34,7 @@
                                 <td>{{ $row->departure_date }}</td>
                                 <td>{{ $row->duration }}</td>
                                 <td>{{ $row->type }}</td>
-                                <td>{{ $row->price }}</td>
+                                <td>Rp. {{ number_format($row->price, 0, ',', '.') }},00</td>
                                 <td>
                                     <form action="{{ route('travelpackages.destroy', [$row->id]) }}"
                                         onsubmit="return confirm('apakah anda yakin ingin menghapus,{{ $row->name }}?..')"

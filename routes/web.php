@@ -41,6 +41,7 @@ Route::get('/dashboard', 'UserController@index', function () {
 
 Route::resource('users', UserController::class);
 
+
 Route::resource('travelpackages', TravelPackageController::class);
 
 Route::resource('transactions',TransactionsController::class);

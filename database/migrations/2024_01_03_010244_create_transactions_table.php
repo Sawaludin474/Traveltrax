@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('travel_package_id')->constrained('travel_packages')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->integer('transaction_total');
-            $table->string('transaction_status');
-            $table->timestamps();
-        });
+            Schema::create('transactions', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('travel_package_id')->constrained('travel_packages')->cascadeOnDelete();
+                $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+                $table->integer('transaction_total');
+                $table->string('transaction_status');
+                $table->timestamps();
+            });
     }
 
     /**

@@ -3,7 +3,7 @@
 
 
 <section class="section" id="popular">
-  <div class="container">
+  <div class="container ">
     <span class="section__subtitle" style="text-align: center"
       >Related Package Travel</span
     >
@@ -13,7 +13,7 @@
 
     <div class="popular__all">
       @foreach ($travelPackages as $item)
-      <article class="popular__card">
+      <article class="popular__card" onclick="selectPackage('{{ $item->id }}')">
         <a href="{{ route('detail', $item->id)}}">
           @if($item->gallery->isNotEmpty()) 
             <img
@@ -34,3 +34,14 @@
   </div>
 </section>
 @endsection
+
+@push('script')
+<script>
+  function selectPackage(packageId) {
+      document.getElementById('travel_package_id').value = packageId;
+      // Optional: Scroll to the form or highlight it
+      document.getElementById('bookingForm').scrollIntoView();
+  }
+  </script>
+  
+@endpush
